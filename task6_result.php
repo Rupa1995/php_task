@@ -1,4 +1,7 @@
 <?php
+session_start();
+?>
+<?php
    if(isset($_FILES['image'])){
       $errors= array();
       $file_name = $_FILES['image']['name'];
@@ -40,7 +43,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
-	<div class="container">
+	<div class="container" id="mydiv">
 		<div class="image_bg">
 			<div class="image">
 				<?php
@@ -99,8 +102,28 @@
         </table>
     </div>
 </div>
+   <form id="docform" method="post" action="invoice.php">
+		<input type="hidden" name="htmlstring" id="htmlstring" value="">
+		<input type="submit" id="docx-button" value="Generate docx">    	
+    </form>
+    <script>
+    	$('#docx-button').click(function(){
+    		$('#htmlstring').val($('#mydiv').html());
+    	});
+    </script>
 </body>
 </html>
 <?php
 	include 'dbconnect.php';
+
+	//$_SESSION['full'] = $_POST['full'];
+	//$_SESSION['mobile'] = $_POST['text1'];
+	$_SESSION['userId'] = $_POST['text2'];
+	//$_SESSION['marks'] = $_POST['message'];
+	//$_SESSION['image_upload'] = $_FILES['image']['name'];
+	// print_r($_SESSION['full']);
+	// print_r($_SESSION['mobile']);
+	//print_r($_SESSION['userId']);
+	// print_r($_SESSION['marks']);
+	// print_r($_SESSION['image_upload']);
 ?>

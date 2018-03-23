@@ -11,7 +11,7 @@
 	<div class="container task1" >
 		<div class="task-box">
 			<h1>PHP TASK-1</h1>
-		    <form action="task1.php" method="post">
+		    <form action="task1_result.php" method="post">
 		    	<div>
 			        <label>First name: </label>
 			        <input type="text" name="firstname" id="fname" onkeyup="myfun()">

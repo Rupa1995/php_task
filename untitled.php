@@ -45,3 +45,19 @@ if(!in_array(strtok($validatonresult['domain'],"."),$arr))
 {
 	echo $email "= is valid"; 
 }
+
+
+$str = $row['marks'];
+$subject = array();
+$marks = array();
+$word = explode("\n", $str);
+for ($i=0; $i < count($word); $i++) { 
+    $arr = explode("|", $word[$i]);
+    array_push($subject,$arr[0]);
+    array_push($marks, $arr[1]);
+}
+
+
+
+success..
+windows.location.href("/path");

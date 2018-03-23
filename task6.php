@@ -14,11 +14,13 @@
 		    <form enctype="multipart/form-data" id="form6" runat="server">
 		    	<div>
 			        <label>First name: </label>
-			        <input type="text" name="firstname" id="fname" onkeyup="myfun()">
+			        <input type="text" name="firstname" id="fname" onkeyup="myfun()" required oninvalid="this.setCustomValidity('Enter your firstname')"
+    oninput="setCustomValidity('')">
 			    </div>
 			    <div>
 			    	<label>Last name: </label>
-			        <input type="text" name="lastname"  id="lname" onkeyup="myfun()">
+			        <input type="text" name="lastname"  id="lname" onkeyup="myfun()" required oninvalid="this.setCustomValidity('Enter lastname')"
+    oninput="setCustomValidity('')">
 			    </div>
 			    <div>   				
 			        <label>Full Name: </label>
@@ -26,11 +28,13 @@
 			    </div>
 			    <div>
 			    	<label>Mobile no.:</label>
-			    	<input type="text" name="text1" placeholder="enter your mobile number.." onblur="phonenumber()" id="mobile">
+			    	<input type="text" name="text1" placeholder="enter your mobile number.." onblur="phonenumber()" id="mobile" required oninvalid="this.setCustomValidity('Enter 10 digit mobile no. with +91 as preffix')"
+    oninput="setCustomValidity('')">
 			    </div>
 			    <div>
 			    	<label>Email Id:  </label>
-			    	<input type="text" name="text2" placeholder="enter your email.." onblur="emailverify()" id="email">
+			    	<input type="text" name="text2" placeholder="enter your email.." onblur="emailverify()" id="email" required oninvalid="this.setCustomValidity('Enter valid email id')"
+    oninput="setCustomValidity('')">
 			    </div>
 			    <div id="image">
 		    	 	<div>
@@ -47,6 +51,7 @@
 			    	<textarea name="message" rows="10" cols="30" placeholder="Enter your marks...!!!!" id="marks"></textarea>
 			    </div>
 			    <input type="submit" id="submit" name="submit">
+
 		    </form>
 		  
 		</div>
@@ -149,6 +154,7 @@
 					 		
 					 	});
  					 });
+
 
 
 	</script>

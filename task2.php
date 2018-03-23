@@ -38,7 +38,8 @@
 	 <link rel="stylesheet" type="text/css" href="stylesheets/task1.css">
 </head>
 <body>
-	<div class="container task1" >
+   <div class="container task1">
+	<div class="task-box" >
 	  <form action="" method="post" enctype="multipart/form-data">
 		    	
 		    	 <div id="image">
@@ -55,6 +56,6 @@
 			    </div>
 		    </form>
 		</div>
-
+</div>
 </body>
 </html>

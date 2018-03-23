@@ -35,11 +35,12 @@
 </head>
 <body>
 	<div class="container task1">
+    <div class="task-box">
 		<form action="valid_email.php" method="post" name="form1">
 			<input type="text" name="text1" placeholder="enter your email.." value="">
 			<input type="submit" name="submit" value="Submit">
     </form>
-
+  </div>
 	</div>
 <!--	<script>
 		function Validateemail(inputtxt)

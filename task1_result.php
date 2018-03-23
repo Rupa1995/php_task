@@ -6,11 +6,13 @@
 </head>
 <body>
 	<div class="task1">
-	<h1>Hello,
-	<?php 
-		echo $_POST["fullname"];
-		?>!!
-</h1>
+		<div class="task-box">
+			<h1>Hello,
+			<?php 
+				echo $_POST["fullname"];
+				?>!!
+			</h1>
+		</div>
 </div>
 </body>
 </html>

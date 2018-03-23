@@ -45,13 +45,13 @@ if (mysqli_query($conn, $sql)) {
 
 				$sql = "INSERT INTO php_task6(fname,lname,mobile,email,image,marks) VALUES ('$fname','$lname','$mobile','$email','$image_upload','$marks');";
 
-				// if(mysqli_query($conn,$sql))
-				// {
-				// 	echo "inserted";
-				// }
-				// else{
-				// 	echo "not inserted";
-				// }
+				if(mysqli_query($conn,$sql))
+				{
+					//echo "inserted";
+				}
+				else{
+					echo "not inserted";
+				}
 }
 
 //header("refresh:50; url=task6.php");
