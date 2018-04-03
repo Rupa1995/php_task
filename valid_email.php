@@ -1,7 +1,7 @@
 <?php
 if(isset($_POST["text1"]))
   {
-		echo "your email id is:".$_POST["text1"];
+		// echo "your email id is:".$_POST["text1"];
 		// set API Access Key
 		$access_key = 'abaab6f93b4184ae2cdf7424e7f553a4';
 
@@ -23,9 +23,9 @@ if(isset($_POST["text1"]))
 		//$validationResult['format_valid'];
 		//$validationResult['smtp_check'];
 		//$validationResult['score'];
-		echo "<pre>";
-		print_r($validationResult);
-		echo "</pre>";
+		// echo "<pre>";
+		// print_r($validationResult);
+		// echo "</pre>";
 
 		$public_domain = array('gmail','yahoo','hotmail','rediff');
 		$domain_in = strtok($validationResult['domain'], ".");

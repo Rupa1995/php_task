@@ -13,7 +13,7 @@
       print_r($domain);
       if(preg_match("/(hotmail.com|gmail.com|yahoo.com|rediff.com)/i", $domain))
       {
-      echo "  not accepted";
+      echo "  not accepted, has public domain";
       }
     else 
     {
@@ -22,7 +22,7 @@
   }
   else
   {
-    echo "not valid";
+    echo "  not valid,enter valid email id,with no public domain";
   }
 }
 
@@ -37,6 +37,7 @@
 	<div class="container task1">
     <div class="task-box">
 		<form action="valid_email.php" method="post" name="form1">
+      <!-- <form action="" method="post" name="form1"> -->
 			<input type="text" name="text1" placeholder="enter your email.." value="">
 			<input type="submit" name="submit" value="Submit">
     </form>

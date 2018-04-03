@@ -1,3 +1,5 @@
+textarea{outline:none;}
+
 .task-box{
 	box-sizing: border-box;
 	border-radius: 5px;
@@ -31,11 +33,12 @@
 	}
 }
 #submit{
+	margin-top: 20px;
 	height: 40px;
 }
-#image{
+/*#image{
 	margin-top: 20px;
-}
+}*/
 h1{
 	padding-left: 25px;
 }

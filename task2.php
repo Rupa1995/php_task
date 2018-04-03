@@ -21,9 +21,9 @@
 
          chmod("images/".$file_name, 0777);
          
-         echo "Success:<br>-------------------------<br><br>";
+         // echo "Success:<br>-------------------------<br><br>";
          echo '<img src = "images/'.$file_name.'">';
-         echo '<br> Image Name : ' .$text;
+         echo '<br><b> Image Name : </b>' .$text;
 
       }else{
          print_r($errors);

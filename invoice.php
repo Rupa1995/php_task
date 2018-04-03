@@ -6,7 +6,7 @@ $username = "root";
 $password = "tiger";
 $database = "php_task";
 $conn = mysqli_connect($servername, $username, $password, $database);
-$sql = "SELECT * FROM php_task6 WHERE email = '$user';";
+$sql = "SELECT * FROM php_task6 WHERE mobile = '$user';";
 $result = mysqli_query($conn , $sql);
 $row = mysqli_fetch_array($result);
 
@@ -63,7 +63,7 @@ for ($i = 1; $i <= 2; $i++) {
         $table->addCell(2000,$fancyTableCellStyle)->addText($marks[$c],$fancyTableFontStyle);
 }
 }
-$file = 'helloWorlds.docx';
+$file = 'profile.docx';
 header("Content-Description: File Transfer");
 header('Content-Disposition: attachment; filename="' . $file . '"');
 header('Content-Type: application/vnd.openxmlformats-officedocument.wordprocessingml.document');
@@ -74,5 +74,5 @@ $xmlWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
 $xmlWriter->save('php://output');
 // Saving the document as OOXML file...
 $objWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
-$objWriter->save('helloWorld.docx');
+$objWriter->save('profile.docx');
 ?>

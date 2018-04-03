@@ -2,6 +2,8 @@
 session_start();
 ?>
 <?php
+//----------------------- image insertion -----------------------
+
    if(isset($_FILES['image'])){
       $errors= array();
       $file_name = $_FILES['image']['name'];
@@ -17,21 +19,61 @@ session_start();
       if(in_array($file_ext,$expensions)=== false){
          $errors[]="extension not allowed, please choose a JPEG or PNG file.";
       }
-      
-    
-      if(empty($errors)==true){
+      if(empty($errors)==true){								//if extension of image matches ,upload it to $file_tmp file
          move_uploaded_file($file_tmp,"images/".$file_name);
 
-         chmod("images/".$file_name, 0777);
-         
-         //echo "Success:<br>-------------------------<br><br>";
-         //echo '<img src = "images/'.$file_name.'">';
-         //echo '<br> Image Name : ' .$text;
-
+         chmod("images/".$file_name, 0777);					//change permission of image
       }else{
          print_r($errors);
       }
    }
+//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< email verification <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+   if(isset($_POST["text2"]))
+  {
+		$access_key = 'abaab6f93b4184ae2cdf7424e7f553a4';		// set API Access Key
+
+		$email_address = $_POST["text2"];						// set email address
+
+		// Initialize CURL:
+	$ch = curl_init('http://apilayer.net/api/check?access_key='.$access_key.'&email='.$email_address.'');  
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+		$json = curl_exec($ch);					// Store the data:
+		curl_close($ch);
+
+		// Decode JSON response:
+		$validationResult = json_decode($json, true);
+		$public_domain = array('gmail','yahoo','hotmail','rediff');
+		$domain_in = strtok($validationResult['domain'], ".");
+		if ($validationResult['format_valid'] && $validationResult['smtp_check']) {
+			if(!in_array($domain_in, $public_domain)){
+			}
+			else
+			{
+				$_POST["text2"] ="";
+				header('location:../task6.php');
+				exit;
+			}
+		}
+		else{
+			$_POST["text2"] ="";
+			// echo "invalid email";
+			header('location:../task6.php');
+			exit;
+		}
+	}
+
+//----------------------------------------phone number validation -------------------------------
+	if(isset($_POST["text1"])){
+		$phone = "/^\+91?([7-9][0-9]{9})$/";
+		$phone_input = $_POST['text1'];
+		if(!(preg_match($phone, $phone_input))){
+			$_POST['text1']="";
+			header('location: ../task6.php');
+			exit;
+		}
+	}
 
 ?>
 <!DOCTYPE html>
@@ -79,13 +121,16 @@ session_start();
             ini_set('display_errors', 1);
 			ini_set('display_startup_errors', 1);
 			error_reporting(E_ALL);
-
+			$test = "/^[A-Za-z]+[|]+\b([0-9]{1,2}|100)\b$/";
 			$str = $_POST['message'];
-			$array = explode("\n", $str);
+			$array = explode("\n", $str);					//seperate entry of each row
 			$finalarr = array();
-
+			for($k = count($array)-1 ; $k>=0; $k--){
+			if(preg_match($test, $array[$k])){				//comparing if each row entry matches
+															// the criteria of (string|integer)
 			for($i = 0; $i < count($array);$i++){
 			    $finalarr[$i] = explode("|", $array[$i]);
+
 			}
             echo "<td colspan=".count($finalarr)."><h2>Marksheet</h2></td>";
             for($j=0;$j<2;$j++)
@@ -97,7 +142,14 @@ session_start();
                             
                 }
                 echo '</tr>';
+            }}
+            else{
+            	//$_POST['message']="";
+				header('location: ../task6.php');
+				exit;
             }
+           
+        }
             ?>
         </table>
     </div>
@@ -116,14 +168,5 @@ session_start();
 <?php
 	include 'dbconnect.php';
 
-	//$_SESSION['full'] = $_POST['full'];
-	//$_SESSION['mobile'] = $_POST['text1'];
-	$_SESSION['userId'] = $_POST['text2'];
-	//$_SESSION['marks'] = $_POST['message'];
-	//$_SESSION['image_upload'] = $_FILES['image']['name'];
-	// print_r($_SESSION['full']);
-	// print_r($_SESSION['mobile']);
-	//print_r($_SESSION['userId']);
-	// print_r($_SESSION['marks']);
-	// print_r($_SESSION['image_upload']);
+	$_SESSION['userId'] = $_POST['text1'];
 ?>
