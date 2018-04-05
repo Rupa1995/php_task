@@ -3,7 +3,7 @@
 <html>
 <head>
 	<title>task3</title>
-	<link rel="stylesheet" type="text/css" href="stylesheets/task1.css">
+	<link rel="stylesheet" type="text/css" href="../stylesheets/task1.css">
 </head>
 <body>
 

@@ -31,7 +31,7 @@
 <html>
 <head>
 	<title>task5</title>
-	<link rel="stylesheet" type="text/css" href="stylesheets/task1.css">
+	<link rel="stylesheet" type="text/css" href="../stylesheets/task1.css">
 </head>
 <body>
 	<div class="container task1">

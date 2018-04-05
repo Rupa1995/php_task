@@ -16,8 +16,11 @@ $marks = array();
 $word = explode("\n", $str);
 for ($i=0; $i < count($word); $i++) { 
     $arr = explode("|", $word[$i]);
-    array_push($subject,$arr[0]);
-    array_push($marks, $arr[1]);
+    if(isset($arr[0]) && isset($arr[1]))
+    {
+        array_push($subject,$arr[0]);
+        array_push($marks, $arr[1]);
+    }
 }
 
 require_once "./vendor/autoload.php";

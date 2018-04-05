@@ -1,8 +1,8 @@
 <?php
-
+/*
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+error_reporting(E_ALL);*/
 
 $str = $_POST['message'];
 $array = explode("\n", $str);
@@ -17,7 +17,7 @@ for($i = 0; $i < count($array);$i++){
 <html>
 <head>
     <title>task3_result</title>
-    <link rel="stylesheet" type="text/css" href="stylesheets/task1.css">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/task1.css">
 </head>
 <body>
     <div class="container task3">

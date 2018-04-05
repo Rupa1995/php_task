@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>task1</title>
-	 <link rel="stylesheet" type="text/css" href="stylesheets/task1.css">
+	 <link rel="stylesheet" type="text/css" href="../stylesheets/task1.css">
 </head>
 <body>
 	<div class="task1">
