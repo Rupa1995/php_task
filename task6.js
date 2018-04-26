@@ -32,7 +32,7 @@
 
 				function phonenumber()
 					{  
-					  var phoneno = /^\+91?([7-9][0-9]{9})$/;
+					  var phoneno = /^\+91?([6-9][0-9]{9})$/;
 				            // while(mobile.value !=""){
 				            if(mobile.value.match(phoneno))
 				            {	mobile.style.border = "2px solid MediumSeaGreen";

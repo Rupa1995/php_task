@@ -13,11 +13,11 @@
 		</form>
 	</div>
 </div>
-	<script>
-		function phonenumber(inputtxt)
+<script>
+function phonenumber(inputtxt)
 {
-  var phoneno = /^\+91?([7-9][0-9]{9})$/;
-  if(inputtxt.value.match(phoneno))
+  var phoneno = /^\+91?([6-9][0-9]{9})$/;
+  if(inputtxt.value.match(phoneno))       //check if input data matches with regular expression
   {
   	 alert("Phone Number accepted");
       return true;
@@ -27,7 +27,7 @@
      alert("Not a valid Phone Number, please enter number starting with 7,8 or 9 with +91 prefix");
      return false;
   }
-  }
-	</script>
+}
+</script>
 </body>
 </html>

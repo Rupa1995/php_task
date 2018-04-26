@@ -3,7 +3,7 @@ textarea {
   outline: none;
 }
 
-/* line 3, ../sass/task1.scss */
+/* line 5, ../sass/task1.scss */
 .task-box {
   box-sizing: border-box;
   border-radius: 5px;
@@ -14,13 +14,15 @@ textarea {
   margin-right: 30%;
   margin-top: 10%;
 }
-/* line 12, ../sass/task1.scss */
-.task-box label {
+
+/* line 16, ../sass/task1.scss */
+label {
   padding: 12px 12px 12px 0;
   display: inline-block;
 }
-/* line 16, ../sass/task1.scss */
-.task-box input {
+
+/* line 21, ../sass/task1.scss */
+input {
   width: 50%;
   padding: 8px 8px 8px 8px;
   display: inline-block;
@@ -28,8 +30,8 @@ textarea {
   margin-bottom: 10px;
   outline: none;
 }
-/* line 25, ../sass/task1.scss */
-.task-box input[type=submit] {
+/* line 28, ../sass/task1.scss */
+input[type=submit] {
   background-color: #5acda0;
   color: white;
   padding: 12px 20px;
@@ -39,40 +41,40 @@ textarea {
   width: 25%;
 }
 
-/* line 35, ../sass/task1.scss */
+/* line 39, ../sass/task1.scss */
 #submit {
   margin-top: 20px;
   height: 40px;
 }
 
-/*#image{
-	margin-top: 20px;
-}*/
-/* line 42, ../sass/task1.scss */
+/* line 44, ../sass/task1.scss */
 h1 {
   padding-left: 25px;
 }
 
-/* line 45, ../sass/task1.scss */
-table, tr, td {
+/* line 48, ../sass/task1.scss */
+table,
+tr,
+td {
   background-color: #f2f2f2;
   border: 2px solid #868383;
   border-collapse: collapse;
   border-radius: 5px;
 }
 
-/* line 52, ../sass/task1.scss */
-tr, td {
+/* line 57, ../sass/task1.scss */
+tr,
+td {
   padding: 8px;
   text-align: center;
 }
 
-/* line 56, ../sass/task1.scss */
+/* line 63, ../sass/task1.scss */
 h2 {
   text-align: center;
 }
 
-/* line 59, ../sass/task1.scss */
+/* line 67, ../sass/task1.scss */
 .task3 {
   padding-top: 10%;
   margin-left: 10%;
@@ -80,27 +82,29 @@ h2 {
 }
 
 /*------------------------------------------------------------------------------------*/
-/* line 65, ../sass/task1.scss */
+/* line 75, ../sass/task1.scss */
 .detail {
   float: left;
   padding: 30px 0px 0px 50px;
-  /*font-weight: 700;*/
   font-size: 30px;
   font-style: italic;
 }
-/* line 71, ../sass/task1.scss */
-.detail .name, .detail .mob, .detail .email {
+
+/* line 82, ../sass/task1.scss */
+.name,
+.mob,
+.email {
   padding-bottom: 10px;
 }
 
-/* line 75, ../sass/task1.scss */
+/* line 88, ../sass/task1.scss */
 .image_bg {
   height: 300px;
   width: 100%;
   background-image: url("/images/light1.jpg");
 }
 
-/* line 80, ../sass/task1.scss */
+/* line 94, ../sass/task1.scss */
 .image {
   margin: 170px 20px 20px 35px;
   box-sizing: border-box;
@@ -111,38 +115,30 @@ h2 {
   width: 260px;
   overflow: hidden;
 }
-/* line 91, ../sass/task1.scss */
-.image img {
+
+/* line 105, ../sass/task1.scss */
+img {
   width: 100%;
   height: auto;
 }
-/* line 94, ../sass/task1.scss */
-.image img:hover {
+/* line 108, ../sass/task1.scss */
+img:hover {
   box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
 }
 
-/*.image {
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 5px;
-    width: 150px;
-&:hover {
-    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
-}
-}*/
-/* line 107, ../sass/task1.scss */
+/* line 113, ../sass/task1.scss */
 body {
   background-color: #d6f6d1;
 }
 
-/* line 110, ../sass/task1.scss */
+/* line 117, ../sass/task1.scss */
 .marksheet {
   margin-top: 20% !important;
   margin-left: 3%;
   margin-right: 3%;
 }
 
-/* line 115, ../sass/task1.scss */
+/* line 123, ../sass/task1.scss */
 .abc {
   margin-bottom: 5%;
   font-size: 80px;

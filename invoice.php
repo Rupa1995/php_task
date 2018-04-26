@@ -5,12 +5,13 @@ $servername = "localhost";
 $username = "root";
 $password = "tiger";
 $database = "php_task";
-$conn = mysqli_connect($servername, $username, $password, $database);
-$sql = "SELECT * FROM php_task6 WHERE mobile = '$user';";
+$conn = mysqli_connect($servername, $username, $password, $database); //connect to db
+$sql = "SELECT * FROM php_task6 WHERE mobile = '$user';";  //fetchning data from database
 $result = mysqli_query($conn , $sql);
 $row = mysqli_fetch_array($result);
 
-$str = $row['marks'];
+
+$str = $row['marks'];  //exploding marks data to be printed in table as subject and marks in diff row
 $subject = array();
 $marks = array();
 $word = explode("\n", $str);
@@ -18,8 +19,8 @@ for ($i=0; $i < count($word); $i++) {
     $arr = explode("|", $word[$i]);
     if(isset($arr[0]) && isset($arr[1]))
     {
-        array_push($subject,$arr[0]);
-        array_push($marks, $arr[1]);
+        array_push($subject,$arr[0]); //push subject in $subject array
+        array_push($marks, $arr[1]);  // push marks in $marks array
     }
 }
 
@@ -39,14 +40,14 @@ $fontStyle->setBold(true);
 $fontStyle->setName('Tahoma');
 $fontStyle->setSize(13);
 $section->addText("Final Report",array('bold'=>true,'italic'=>true,'size'=> 20, 'allCaps'=>true, 'color' => '7FFFD4','underline'=>'single'));
-//$textrun = $section->addTextRun([$paragraphstyle]);
+//----------------------------add image , name , mobile, email --------------------------------
 $section->addImage('images/'.$row['image'],array('width' => 150, 'height'=> 150, 'align'=>'center'));
 $section->addTextBreak(2);
 $section->addText("Name: ".$row['fname']." ".$row['lname'],$fontStyle);
 $section->addText("Mobile no.: ".$row['mobile'], $fontStyle);
 $section->addText("Email: ".$row['email'], $fontStyle);            
 $section->addTextBreak(1);
-
+//-----------------------------add table style--------------------------------------------------
 $fancyTableStyleName = 'Fancy Table';
 $fancyTableStyle = array('borderSize' => 15, 'borderColor' => '006699', 'cellMargin' => 50, 'alignment' => \PhpOffice\PhpWord\SimpleType\JcTable::CENTER, 'cellSpacing' => 50);
 $fancyTableFirstRowStyle = array('borderBottomSize' => 18, 'borderBottomColor' => '0000FF', 'bgColor' => '66BBFF');
@@ -66,7 +67,8 @@ for ($i = 1; $i <= 2; $i++) {
         $table->addCell(2000,$fancyTableCellStyle)->addText($marks[$c],$fancyTableFontStyle);
 }
 }
-$file = 'profile.docx';
+//----------------file download--------------------------------------
+$file = 'profile.docx';     //name for file downloaded on server
 header("Content-Description: File Transfer");
 header('Content-Disposition: attachment; filename="' . $file . '"');
 header('Content-Type: application/vnd.openxmlformats-officedocument.wordprocessingml.document');
@@ -75,7 +77,7 @@ header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
 header('Expires: 0');
 $xmlWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
 $xmlWriter->save('php://output');
-// Saving the document as OOXML file...
-$objWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
-$objWriter->save('profile.docx');
+// Saving the document as OOXML file... file download by client
+// $objWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
+// $objWriter->save('profile.docx');
 ?>
